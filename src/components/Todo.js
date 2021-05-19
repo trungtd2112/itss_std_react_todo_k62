@@ -56,7 +56,7 @@ function Todo() {
   const handleFilterChange = value => setFilter(value);
   
   return (
-    <div className="panel">
+    <div className="panel is-danger">
       <div className="panel-heading">
         ITSS ToDoアプリ
       </div>
