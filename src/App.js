@@ -8,7 +8,7 @@ import Logout from './components/Logout'
 import firebase, {checkInfo} from "./lib/firebase";
 
 function App() {
-  const [user, setUser] = useState({id: "", name: ""});
+  const [user, setUser] = useState({id: "", name: "", image:""});
   
   useEffect(() => {
     firebase.auth().onAuthStateChanged(async (user) => {
@@ -21,12 +21,14 @@ function App() {
       }
     });
   }, []);
+  
   return (
     <div className="container is-fluid">
       <Logout
         key={user.id}
         currentUserId={user.id}
         currentUserName={user.name}
+        currentUserImage={user.image}
       />
     </div>
   );
